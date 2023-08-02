@@ -18,8 +18,17 @@ public class RomanNumberConverter {
 
     public int convert(String numberInRoman) {
         int sum = 0;
-        for(int i = 0; i < numberInRoman.length(); i++){
-            sum += table.get(numberInRoman.charAt(i));
+        int lastRightNumber = 0;
+        for(int i = numberInRoman.length() - 1; i >= 0; i--){
+            int current = table.get(numberInRoman.charAt(i));
+
+            int multiplier = 1;
+            if(current < lastRightNumber) multiplier = -1;
+
+            sum = sum + current * multiplier;
+            
+            lastRightNumber = current;
+            
         }
         return sum;
     }

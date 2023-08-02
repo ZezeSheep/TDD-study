@@ -31,5 +31,32 @@ public class RomanNumberConverterTest {
 
     }
 
+    @Test
+    public void mustUnderstandFourSymbolsLikeXXII(){
+        RomanNumberConverter romanConverter = new RomanNumberConverter();
+
+        int number = romanConverter.convert("XXII");
+        assertEquals(22, number);
+
+    }
+
+    @Test
+    public void mustUnderstandSymbolsLikeIX(){
+        RomanNumberConverter romanConverter = new RomanNumberConverter();
+
+        int number = romanConverter.convert("IX");
+        assertEquals(9, number);
+
+    }
+
+    @Test
+    public void mustUnderstandComplexSequencesLikeXXIV(){
+        RomanNumberConverter romanConverter = new RomanNumberConverter();
+
+        int number = romanConverter.convert("XXIV");
+        assertEquals(24, number);
+
+    }
+
     
 }
