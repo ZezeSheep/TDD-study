@@ -22,5 +22,14 @@ public class RomanNumberConverterTest {
         assertEquals(5, number);
     }
 
+    @Test
+    public void mustUnderstandTwoSymbolsLikeII(){
+        RomanNumberConverter romanConverter = new RomanNumberConverter();
+
+        int number = romanConverter.convert("II");
+        assertEquals(2, number);
+
+    }
+
     
 }
