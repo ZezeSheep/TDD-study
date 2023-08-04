@@ -18,5 +18,18 @@ public class SalaryCalculatorTest {
         assertEquals(1500.0 * 0.9, salary, 0.00001);
 
     }
+
+    @Test
+    public void mustCalculateSalaryForDevelopersWithSalaryAboveTheEdge(){
+
+        SalaryCalculator salaryCalculator = new SalaryCalculator();
+
+        Worker developer = new Worker("Mauricio", 4000.0, Role.DEVELOPER);
+
+        double salary = salaryCalculator.executeSalaryCalculus(developer);
+
+        assertEquals(4000.0 * 0.9, salary, 0.00001);
+
+    }
     
 }
