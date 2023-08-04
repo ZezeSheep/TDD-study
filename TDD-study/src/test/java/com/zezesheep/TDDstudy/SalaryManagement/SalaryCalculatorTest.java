@@ -28,7 +28,7 @@ public class SalaryCalculatorTest {
 
         double salary = salaryCalculator.executeSalaryCalculus(developer);
 
-        assertEquals(4000.0 * 0.9, salary, 0.00001);
+        assertEquals(4000.0 * 0.8, salary, 0.00001);
 
     }
     
