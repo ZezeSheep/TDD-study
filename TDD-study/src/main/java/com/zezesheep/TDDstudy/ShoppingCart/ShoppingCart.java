@@ -16,5 +16,17 @@ public class ShoppingCart {
     public void addItem(ShoppingItem shoppingItem){
         this.items.add(shoppingItem);
     }
+
+    public double highestValue(){
+        if(items.size() == 0) return 0;
+
+        double maior = items.get(0).getTotalValue();
+        for(ShoppingItem item : items){
+            if(maior < item.getTotalValue()){
+                maior = item.getTotalValue();
+            }
+        }
+        return maior;
+    }
     
 }
