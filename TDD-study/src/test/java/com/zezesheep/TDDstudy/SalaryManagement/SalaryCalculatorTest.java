@@ -44,5 +44,18 @@ public class SalaryCalculatorTest {
         assertEquals(500.0 * 0.85, salary, 0.00001);
 
     }
+
+    @Test
+    public void mustCalculateSalaryForDBAsWithSalaryAboveTheEdge(){
+
+        SalaryCalculator salaryCalculator = new SalaryCalculator();
+
+        Worker developer = new Worker("Mauricio", 5000.0, Role.DBA);
+
+        double salary = salaryCalculator.executeSalaryCalculus(developer);
+
+        assertEquals(5000.0 * 0.75, salary, 0.00001);
+
+    }
     
 }
