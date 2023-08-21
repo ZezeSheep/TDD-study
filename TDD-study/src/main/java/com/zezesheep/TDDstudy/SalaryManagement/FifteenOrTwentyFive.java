@@ -1,15 +1,19 @@
 package com.zezesheep.TDDstudy.SalaryManagement;
 
-public class FifteenOrTwentyFive implements CalculationRule {
+public class FifteenOrTwentyFive extends CalculationRule {
+    @Override
+    protected int limit() {
+        return 2500;
+    }
 
     @Override
-    public double calculate(Worker worker) {
-        if(worker.getSalary() < 2500.0){
-            return worker.getSalary() * 0.85;    
-        }
-        else{
-            return worker.getSalary() * 0.75;
-        }
+    protected double percentageAboveLimit() {
+        return 0.75;
+    }
+
+    @Override
+    protected double percentageUnderLimit() {
+        return 0.85;
     }
     
 }

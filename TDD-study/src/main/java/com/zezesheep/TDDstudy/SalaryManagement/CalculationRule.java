@@ -1,7 +1,20 @@
 package com.zezesheep.TDDstudy.SalaryManagement;
 
-public interface CalculationRule {
+public abstract class CalculationRule {
 
-    double calculate(Worker worker);
+    public double calculate(Worker worker){
+        if(worker.getSalary() > limit()){
+            return worker.getSalary() * percentageAboveLimit();
+        }
+        else{
+            return worker.getSalary() * percentageUnderLimit();
+        }
+    }
+
+    protected abstract int limit();
+
+    protected abstract double percentageAboveLimit();
+
+    protected abstract double percentageUnderLimit();
     
 }

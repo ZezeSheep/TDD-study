@@ -1,15 +1,20 @@
 package com.zezesheep.TDDstudy.SalaryManagement;
 
-public class TenOrTwentyPercent implements CalculationRule {
+public class TenOrTwentyPercent extends CalculationRule {
 
     @Override
-    public double calculate(Worker worker) {
-        if(worker.getSalary() > 3000.0){
-            return worker.getSalary() * 0.8;    
-        }
-        else{
-            return worker.getSalary() * 0.9;
-        }
+    protected int limit() {
+        return 3000;
+    }
+
+    @Override
+    protected double percentageAboveLimit() {
+        return 0.8;
+    }
+
+    @Override
+    protected double percentageUnderLimit() {
+        return 0.9;
     }
     
 }
