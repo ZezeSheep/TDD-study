@@ -1,9 +1,14 @@
 package com.zezesheep.TDDstudy.Invoice;
 
-public class InvoiceDao {
+public class InvoiceDao implements AfterInvoiceGenerated {
 
-    public void persist(Invoice invoice){
+    private void persist(Invoice invoice){
         // persiste invoice
+    }
+
+    @Override
+    public void execute(Invoice invoice) {
+        persist(invoice);
     }
     
 }

@@ -1,9 +1,14 @@
 package com.zezesheep.TDDstudy.Invoice;
 
-public class SAP {
+public class SAP implements AfterInvoiceGenerated {
 
-    public void send(Invoice invoice){
+    private void send(Invoice invoice){
         // send invoice to SAP
+    }
+
+    @Override
+    public void execute(Invoice invoice) {
+        send(invoice);
     }
     
 }
