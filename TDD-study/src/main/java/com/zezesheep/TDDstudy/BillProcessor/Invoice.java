@@ -19,5 +19,18 @@ public class Invoice {
         this.payments = new ArrayList<>();
         this.payed = false;
     }
+
+    public void addPayment(Payment payment){
+        payments.add(payment);
+
+        double totalValue = 0;
+        for(Payment paymentItem : payments){
+            totalValue+=paymentItem.getValue();
+        }
+
+        if(totalValue >= value){
+            payed = true;
+        }
+    }
     
 }
